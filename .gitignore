@@ -1,0 +1,11 @@
+.neon
+.env.local
+.env*.local
+
+node_modules
+.next
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+coverage
+.env*

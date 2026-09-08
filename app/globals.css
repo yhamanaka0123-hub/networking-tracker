@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-border: #e2e2df;
+  --color-text: #1f2320;
+  --color-muted: #6b6f6b;
+  --color-accent: #2f6f4f;
+  --color-accent-contrast: #ffffff;
+  --color-danger: #b3261e;
+  --color-low: #6b6f6b;
+  --color-medium: #b98900;
+  --color-high: #b3261e;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-border rounded-[10px] p-5;
+  }
+
+  .btn {
+    @apply cursor-pointer border border-border bg-surface text-text px-3.5 py-2 rounded-md text-sm disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-accent border-accent text-accent-contrast;
+  }
+
+  .btn-danger {
+    @apply text-danger border-danger bg-transparent;
+  }
+
+  .field-input {
+    /* text-base (16px) avoids iOS Safari auto-zoom on focus. */
+    @apply w-full text-base font-[inherit] px-2.5 py-2 border border-border rounded-md bg-surface text-text;
+  }
+
+  .field-label {
+    @apply block text-sm text-muted mb-1;
+  }
+
+  .badge {
+    @apply text-[0.72rem] uppercase tracking-wide px-2 py-0.5 rounded-full border;
+    border-color: currentColor;
+  }
+
+  .badge-low {
+    @apply text-low;
+  }
+
+  .badge-medium {
+    @apply text-medium;
+  }
+
+  .badge-high {
+    @apply text-high;
+  }
+}
